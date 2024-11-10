@@ -1,0 +1,190 @@
+/* components/ImageSlider.module.css */
+.banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.bannerImg{
+    width: 95%;
+    height: 35rem;
+    background-image: url('https://i.postimg.cc/6qqmxjgK/nBanner.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: .5rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bannerImg a{
+    position: absolute;
+    bottom: 0;
+}
+
+.bannerImg a button{
+    font-size: 1.5rem;
+    border: none;
+    background: rgb(4, 161, 114);
+    color: aliceblue;
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    width: 12rem;
+    height: 3rem;
+} 
+.bannerImg a button:hover{
+    border: 1px solid rgb(4, 161, 114);
+    background: none;
+    color: rgb(2, 44, 28);
+}
+
+.slider {
+    position: relative;
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px; /* Optional for rounded corners */
+  }
+  
+  .slideContainer {
+    display: flex;
+    transition: transform 10s ease;
+  }
+  
+  .slide {
+    min-width: 100%;
+    height: 40rem;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 2rem;
+    transform: scale(.96);
+  }
+  
+  .overlay {
+    color: rgb(0, 0, 0);
+    background-color: rgba(9, 145, 134, 0.089); /* Semi-transparent overlay */
+    padding: 20px;
+    width: 30rem; /* Control overlay width */
+  }
+  
+  .overlay h2 {
+    font-size: 2em;
+  }
+  
+  .overlay p {
+    font-size: .4rem;
+  }
+  .overlay a{
+    margin: 1rem;
+  }
+  .overlay a button{
+    background-color: blue;
+    color: aliceblue;
+    border: none;
+    padding: .3rem .6rem;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Navigation Buttons */
+  .prevButton, .nextButton {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2em;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: background-color 0.3s;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .prevButton {
+    left: 10px;
+  }
+  
+  .nextButton {
+    right: 10px;
+  }
+  
+  .prevButton:hover, .nextButton:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Responsive Styles */
+
+  @media (max-width:900px) {
+    .bannerImg{
+        height: 25rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bannerImg{
+        width: 100%;
+        height: 20rem;
+    }
+    .slide {
+      height:20rem;
+      transform: scale(1);
+    }
+  
+    .overlay h2 {
+      font-size: 1.5em; /* Reduce title font size */
+    }
+  
+    .overlay p {
+      font-size: 0.9em; /* Reduce description font size */
+    }
+  
+    .prevButton, .nextButton {
+      font-size: 1.5em; /* Scale down button size */
+      width: 30px;
+      height: 30px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bannerImg{
+        width: 100%;
+        height: 13rem;
+    }
+    .slide {
+        height:17rem;
+        transform: scale(1);
+      }
+    .overlay {
+      padding: 15px; /* Adjust padding for small screens */
+    }
+  
+    .overlay h2 {
+      font-size: 1.2em; /* Further reduce title font size */
+    }
+  
+    .overlay p {
+      font-size: 0.8em; /* Further reduce description font size */
+    }
+  
+    .prevButton, .nextButton {
+      font-size: 1.2em; /* Smaller button size for very small screens */
+      width: 25px;
+      height: 25px;
+    }
+  }
+  

@@ -1,0 +1,174 @@
+
+footer {
+    font-family: Arial, sans-serif;
+    color: #b8ec63;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer-icon-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.icon-item {
+    text-align: center;
+    max-width: 16rem;
+    background-color: #666;
+    color: #ddd;
+    padding: .5rem 1.2rem;
+    border-radius: .5rem;
+}
+
+.icon-item svg{
+    font-size: 2rem;
+    color: aqua;
+}
+
+.icon-item h4 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.icon-item p {
+    font-size: 14px;
+}
+
+.footer-middle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer-column{
+    border-right: 1px solid #eee;
+    padding: 0 1.5rem;
+    border-radius: .4rem;
+    margin: .2rem 0;
+}
+.footer-column h5 {
+    font-size: 16px;
+    margin:.2rem auto;
+    text-align: center;
+    border-bottom: 1px solid whitesmoke;
+}
+.footer-column:nth-child(4) h5{
+    width: 6rem;
+}
+.footer-column ul {
+    list-style: circle blue ;
+    display: block;
+}
+
+.footer-column ul li {
+    margin: 8px 0;
+}
+
+.footer-column ul li a {
+    text-decoration-color: yellow;
+    color: #ffffff;
+    font-size: 14px;
+}.footer-column ul li a:hover {
+    text-decoration: none;
+}
+
+.newsletter {
+    text-align: center;
+}
+
+.newsletter input[type="email"] {
+    width: 20rem;
+    height: 3rem;
+    background:none;
+    border: 1px solid aqua;
+    color: darkturquoise;
+    padding: .2rem .4rem;
+    font-family: "Roboto Mono", monospace;
+    border-radius: 3rem;
+    margin: 0 .2rem;
+}
+
+.newsletter button {
+    padding: .2rem .4rem;
+    height: 3rem;
+    background:none;
+    border: 1px solid aqua;
+    color: darkturquoise;
+    padding: .2rem .4rem;
+    border-radius: 3rem;
+    font-family: "Roboto Mono", monospace;
+}
+
+.social-media {
+    text-align: center;
+}
+
+.social-icons a .Sicon {
+    font-size: 1.4rem;
+    margin: 0 5px;
+    color: palegreen;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px 0;
+    font-size: 14px;
+    gap: 1rem;
+}
+
+.payment-icons .Picon {
+    font-size: 2rem;
+    margin: 5px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .footer-top, .footer-middle {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-icon-section, .footer-column, .newsletter, .social-media {
+        text-align: center;
+    }
+    
+    .footer-icon-section .icon-item {
+        max-width: 100%;
+    }
+
+    .footer-column {
+        margin-bottom: 20px;
+    }
+
+    .footer-bottom {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-top, .footer-middle {
+        padding: 10px;
+    }
+    
+    .newsletter input[type="email"] {
+        width: 90%;
+    }
+    
+    .social-icons a img, .payment-icons img {
+        width: 20px;
+    }
+}
