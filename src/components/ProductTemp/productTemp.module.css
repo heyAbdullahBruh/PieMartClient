@@ -1,0 +1,94 @@
+/* components/ProductCard.module.css */
+.card {
+    width: 220px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    box-shadow: 1px 1px 3px 2px wheat;
+  }
+  
+  .card:hover {
+    background-color: #2e4f6b7a;
+    transform: scale(1.1);
+  }
+  
+  .imageWrapper {
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+  .image{
+    transition: all 1s;
+    border-radius: .1rem;
+  }
+  .image:hover{
+    transform: scale(1.2);
+  }
+
+  .title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5da6fa;
+    margin: .1rem;
+  }
+  
+  .description {
+    font-size: .8rem;
+    color: #719ff3;
+    margin: .1rem;
+  }
+  
+  .brnad {
+    font-size: 0.8rem;
+    color: #05aca3;
+    margin: .1rem;
+  }
+  
+  .rating{
+    font-size: 0.8rem;
+    color: #f1f503;
+    margin: .1rem;
+  }
+
+  .price {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #a5a2a2;
+  }
+  
+  .button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #e68a00;
+  }
+  
+
+
+  @media (max-width:780px) {
+    .card{
+      transform: scale(.93);
+    }
+    .card:hover {
+      transform: scale(1);
+    }
+}
+
+@media (max-width:600px) {
+  .card{
+    transform: scale(.88);
+  }
+  .card:hover {
+    transform: scale(.94);
+  }
+}
