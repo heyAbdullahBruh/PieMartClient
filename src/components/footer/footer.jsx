@@ -10,31 +10,9 @@ const Footer = () => {
     const year =new Date();
 
     return (
+       
         <footer>
-            <div className="footer-top">
-                <div className="footer-icon-section">
-                    <div className="icon-item">
-                        <FontAwesomeIcon icon={faEarthAsia}/>
-                        <h4>Worldwide Delivery</h4>
-                        <p>200 countries and regions worldwide</p>
-                    </div>
-                    <div className="icon-item">
-                         <FontAwesomeIcon icon={faCreditCardAlt}/>
-                        <h4>Secure Payment</h4>
-                        <p>Pay with popular and secure payment methods</p>
-                    </div>
-                    <div className="icon-item">
-                        <FontAwesomeIcon icon={faRotateLeft}/>
-                        <h4>60-day Return Policy</h4>
-                        <p>Merchandise must be returned within 60 days</p>
-                    </div>
-                    <div className="icon-item">
-                        <FontAwesomeIcon icon={faUserGear}/>
-                        <h4>24/7 Help Center</h4>
-                        <p>We’ll respond to you within 24 hours</p>
-                    </div>
-                </div>
-            </div>
+            <hr />
             <div className="footer-middle">
                 <div className="footer-column">
                     <h5>Get to Know Us</h5>
@@ -102,6 +80,7 @@ const Footer = () => {
                 </div>
             </div>
         </footer>
+       
     );
 };
 

@@ -6,14 +6,14 @@ import ProductTemp from "../ProductTemp/ProductTemp";
 import Link from 'next/link';
 
 
-const BSProduct = () => {
+const BSProduct = ({endP,showP}) => {
 
     const [product,setProduct]=useState([]);
 
     const [errorM,setErrorM]=useState('');
 
     useEffect(()=>{
-        fetch(`${api}/products`)
+        fetch(`${api}/products`,{cache:'no-store'})
         .then(res=>res.json())
         .then((res)=>{
             if (res.success) {
@@ -23,9 +23,9 @@ const BSProduct = () => {
             };
         })
 
-    },[])
+    },[]);
     console.log(errorM);
-    console.log(product);
+    // console.log(product);
     return (
         <section className={styles.bSProductSec}>
 
@@ -34,14 +34,17 @@ const BSProduct = () => {
             </div>
 
             <div className={styles.bsProds}>
-                {product?.map(p => (
+                {product?.slice(0,endP).map(p => (
                     <ProductTemp key={p._id} product={p} />
                 ))}
             </div>
-
-            <div className={styles.showMoreBtn}>
-                <Link href={'#'}><button>Show More Products</button></Link>
-            </div>
+            {
+             showP&&
+             <div className={styles.showMoreBtn}>
+                 <Link href={'/product/best-seller'}><button>Show More Products</button></Link>
+             </div>
+            }
+            
         </section>
     );
 };

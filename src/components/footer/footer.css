@@ -4,45 +4,6 @@ footer {
     color: #b8ec63;
 }
 
-.footer-top {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding: 20px 0;
-    border-bottom: 1px solid #ddd;
-}
-
-.footer-icon-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:1rem;
-}
-
-.icon-item {
-    text-align: center;
-    max-width: 16rem;
-    background-color: #666;
-    color: #ddd;
-    padding: .5rem 1.2rem;
-    border-radius: .5rem;
-}
-
-.icon-item svg{
-    font-size: 2rem;
-    color: aqua;
-}
-
-.icon-item h4 {
-    font-size: 16px;
-    margin-top: 10px;
-}
-
-.icon-item p {
-    font-size: 14px;
-}
-
 .footer-middle {
     display: flex;
     flex-wrap: wrap;
@@ -88,26 +49,34 @@ footer {
 }
 
 .newsletter input[type="email"] {
-    width: 20rem;
-    height: 3rem;
+    width: 17rem;
+    height: 2.6rem;
     background:none;
     border: 1px solid aqua;
     color: darkturquoise;
     padding: .2rem .4rem;
     font-family: "Roboto Mono", monospace;
+    font-weight: bold;
     border-radius: 3rem;
     margin: 0 .2rem;
 }
 
 .newsletter button {
     padding: .2rem .4rem;
-    height: 3rem;
+    height: 2.6rem;
     background:none;
     border: 1px solid aqua;
     color: darkturquoise;
     padding: .2rem .4rem;
     border-radius: 3rem;
     font-family: "Roboto Mono", monospace;
+    margin: 1rem;
+    cursor: pointer;
+}
+.newsletter button:hover{
+    background:aqua;
+    border: 1px solid rgb(255, 238, 0);
+    color: black;
 }
 
 .social-media {
@@ -137,7 +106,7 @@ footer {
 /* Responsive Design */
 
 @media (max-width: 768px) {
-    .footer-top, .footer-middle {
+    .footer-middle {
         flex-direction: column;
         align-items: center;
     }

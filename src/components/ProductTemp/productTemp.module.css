@@ -22,7 +22,7 @@
   }
   .image{
     transition: all 1s;
-    border-radius: .1rem;
+    border-radius: 0;
   }
   .image:hover{
     transform: scale(1.2);

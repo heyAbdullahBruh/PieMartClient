@@ -34,34 +34,36 @@ const Navbar = () => {
 
                     <div className="userItem">
                         <ul className='dropdown'>
-                            <li>Home</li>
+                            <li><Link href={'/'}>Home</Link></li>
+                            <li><Link href={'/product/best-seller'}>Best Seller</Link> </li>
+                            <li><Link href={'/product/new-product'}>New Product</Link> </li>
+                            <li><Link href={'/product/shop'}>Shop</Link> </li>
                             <li> 
                             <Link href="/#" className="dropdown-link" style={{color:'white'}}>Catagory
                                 <span className="arrow-down"> </span>
                             </Link>
                             <ul className="dropdown-links">
                                 <li>
-                                    <Link href="/#">Mens Fashion</Link>
+                                    <Link href="/product/catagory/mens">Mens Fashion</Link>
                                 </li>
                                 <li>
-                                    <Link href="/#">Women Fashion</Link>
+                                    <Link href="/product/catagory/women">Women Fashion</Link>
                                 </li>
                                 <li>
-                                    <Link href="/#">Kids</Link>
+                                    <Link href="/product/catagory/kids">Kids</Link>
                                 </li>
                                 <li>
-                                    <Link href="/#">Phone</Link>
+                                    <Link href="/product/catagory/headphone">Headphone</Link>
                                 </li>
                                 <li>
-                                    <Link href="/#">Laptop</Link>
+                                    <Link href="/product/catagory/laptop">Laptop</Link>
                                 </li>
                                 <li>
-                                    <Link href="/#">Phone</Link>
+                                    <Link href="/product/catagory/phone">Phone</Link>
                                 </li>
                                 </ul>
                             </li>
-                            <li>Best Seller</li>
-                            <li>New Product</li>
+                            
                         </ul>
                     </div>
 

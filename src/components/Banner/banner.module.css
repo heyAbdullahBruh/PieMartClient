@@ -53,7 +53,7 @@
   
   .slideContainer {
     display: flex;
-    transition: transform 10s ease;
+    transition: transform 15s ease;
   }
   
   .slide {

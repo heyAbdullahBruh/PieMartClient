@@ -73,6 +73,111 @@
     list-style-type: circle;
 }
 
+.servLink{
+    text-align: left;
+    margin: 1rem 0;
+}
+.servLink a button{
+    border: 1px solid hotpink;
+    background: none;
+    color: aqua;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.servLink a button:hover{
+    background: aqua;
+    color: black;
+}
+
+.offerImg{
+    width: 100%;
+    margin: 2rem 0;
+}
+.offerImg img{
+    width: 100%;
+}
+
+
+.footer-top {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.footer-icon-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:1rem;
+}
+
+.icon-item {
+    text-align: center;
+    max-width: 16rem;
+    background-color: #666;
+    color: #ddd;
+    padding: .5rem 1.2rem;
+    border-radius: .5rem;
+}
+
+.icon-item svg{
+    font-size: 2rem;
+    color: aqua;
+}
+
+.icon-item h4 {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.icon-item p {
+    font-size: 14px;
+}
+
+
+.statistics {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 20px;
+    background-color: #15989c; /* Use the orange color */
+    color: white;
+  }
+  
+  .counters {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    gap: 2rem;
+  }
+  
+  .counter-item {
+    text-align: center;
+  }
+  
+  .counter-item h2 {
+    font-size: 2em;
+    margin: 0;
+  }
+  
+  .counter-item p {
+    font-size: 1em;
+  }
+  
+
+
+
 @media (max-width:800px) {
     .overview{
         flex-direction: column;
@@ -98,12 +203,34 @@
 }
 
 @media (max-width:600px) {
+
     .servDesc h1{
         font-size: 1.4rem;
     }
+
     .servDesc .servList{
         flex-direction: column;
         justify-content: center;
         gap: 1rem
     }
+
+    .servLink{
+        text-align: center;
+    }
+
+    .servLink a button{
+        transform: scale(.85);
+    }
+
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+    .statistics{
+        text-align: center;
+    }
+    .counters {
+        flex-direction: column;
+        justify-content: center;
+      }
 }

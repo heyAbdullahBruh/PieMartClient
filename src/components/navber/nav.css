@@ -25,8 +25,12 @@
     align-items: center;
     list-style-type: none;
 }
-
-
+.navSec ul a{
+  color: white;
+}
+.navSec .userItem ul a:hover{
+  border-bottom: 1px solid #010a1a;
+}
 
 .hamburger4 {
   display: none;
@@ -204,7 +208,7 @@ label .hamburger4-lines span:nth-child(2) {
   
 @media screen and (max-width:780px) {
  .navber{
-    top: -30%;
+    top: -20%;
   }
   .hamburger4 {
     display: block;
