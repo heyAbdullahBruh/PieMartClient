@@ -1,0 +1,193 @@
+.shopping{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.filter{
+    flex: 1;
+    border-right: 1px solid #eee;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.filter .checkbox {
+    width: 1.2rem;
+    height: 1.2rem;
+    color: aqua;
+    cursor: pointer;
+}
+
+.prodItems{
+    flex: 3;
+}
+
+.pF{
+    padding: 1rem 0;
+}
+
+.filter p{
+    font-size: .87rem;
+}
+
+.ratF{
+    padding: 1rem 0;
+}
+
+.radio2 {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .radio2 input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .radio2 label {
+    display: inline-block;
+    padding-left: 30px;
+    margin: 7px;
+    position: relative;
+    font-size: 14px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .radio2 span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    transform-origin: 0 0;
+  }
+  
+  .radio2 input:checked + label span {
+    transform: translateY(-50%) scale(0.8);
+    border: 4px solid #4f29f0;
+    color: #4c8bf5;
+  }
+  
+  .radio2 input:checked + label {
+    color: #29f0df;
+  }
+  
+  .radio2 label:hover span {
+    transform: translateY(-50%) scale(1.1);
+    border-color: #4f29f0;
+    box-shadow: 0 0 10px #4c8bf580;
+  }
+  
+
+.brandF select{
+    width: 15rem;
+    height: 3rem;
+    font-family: "Roboto Mono", monospace;
+    background: none;
+    color: #29f0df;
+    cursor: pointer;
+}
+.brandF select option{
+    background-color: #000000;
+}
+  
+.prodItems{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+}
+
+.shopHeader{
+    margin: 2rem 0;
+}
+.shopHeader h1{
+    font-family: "Roboto Mono", monospace;
+    border-bottom: 3px dotted #3cc0e0;
+    border-top: 3px dotted #dde03c;
+    color: #f81eaf;
+}
+
+.shopProds{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+}
+
+.showMoreBtn{
+    margin: 2rem;
+}
+
+.showMoreBtn a button{
+    color: #3cc0e0;
+    background: none;
+    border: 1px solid #48ff00;
+    border-radius: 2rem;
+    font-size: 1.3rem;
+    padding: .4rem .8rem;
+    transition: all .3s;
+    cursor: pointer;
+ }
+ 
+ .showMoreBtn a button:hover{
+     color: #000000;
+     background: #3cc0e0;
+  }
+
+@media (max-width:992px) {
+    .shopProds{
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width:780px) {
+
+    .shopping{
+        flex-direction: column;
+    }
+    .filter{
+        flex: 1;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+    .shopProds{
+        grid-template-columns: auto auto;
+        gap: .3rem;
+    }
+    .showMoreBtn a button{
+        transform: scale(.9);
+     }
+}
+
+@media (max-width:600px) {
+    .shopProds{
+        grid-template-columns: auto;
+        gap: .3rem;
+    }
+    .showMoreBtn a button{
+        transform: scale(.9);
+     }
+}
+
+
+
