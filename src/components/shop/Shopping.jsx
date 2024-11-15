@@ -6,7 +6,7 @@ import SRange from './sliderRange/Range';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { api } from '@/config/api';
-import ProductTemp from '../ProductTemp/ProductTemp';
+import ProductTemp from '../product/ProductTemp/ProductTemp';
 
 
 const Shopping = ({endP}) => {

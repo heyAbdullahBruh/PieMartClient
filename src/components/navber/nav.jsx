@@ -10,8 +10,17 @@ import {useCart } from '../cart/cartContext';
 const Navbar = () => {
 
     const [vissible,setVissible]=useState(true);
-    const {cartCount}=useCart();
-
+    const {cartCount,token}=useCart();
+    const deleteCookie = (name) => {
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+      };
+    
+      const handleDeleteCookie = () => {
+        deleteCookie('token');
+        alert('Cookie deleted!');
+        location.reload();
+      };
+    // console.log(token);
     return (
         <>
             <nav className='navber'>
@@ -103,9 +112,9 @@ const Navbar = () => {
                                 <li>
                                     <Link href="/#">Contact US</Link>
                                 </li>
-                                <li>
-                                    <Link href="/#">LogOut</Link>
-                                </li>
+                                    {
+                                    token&& <li><button style={{cursor:'pointer'}} onClick={handleDeleteCookie}>LogOut</button></li> 
+                                    }
                                 </ul>
                             </li>
                         </ul>
