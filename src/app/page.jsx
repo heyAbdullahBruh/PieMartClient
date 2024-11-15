@@ -1,7 +1,7 @@
 import Banner from "@/components/Banner/banner";
 import styles from "./page.module.css";
-import BSProduct from "@/components/BestSellProd/BSProduct";
-import NProduct from "@/components/newProducts/NProduct";
+import BSProduct from "@/components/product/BestSellProd/BSProduct";
+import NProduct from "@/components/product/newProducts/NProduct";
 import OTopic from "@/components/othertopic/OTopic";
 
 export default function Home() {

@@ -1,0 +1,124 @@
+.sProd{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem ;
+    margin: 2rem 0;
+}
+
+.sProdSec{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* align-items: center; */
+    padding: 1rem ;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+.spDetail,
+.spGallary{
+    flex: 2;
+}
+.atcBtn{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.atcBtn:hover{
+    background-color: #df8703;
+}
+.smbProd{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin: 2rem 0;
+}
+
+.smbHeader{
+    margin: 2rem 0;
+}
+.smbHeader p{
+    font-family: "Roboto Mono", monospace;
+    border-bottom: 1px dotted #ddf1a3;
+    border-top: 1px dotted #96ffce;
+    color: #1ec5f8;
+}
+
+.smbProds{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 2rem;
+}
+
+.showMoreBtn{
+    margin: 2rem;
+}
+
+.showMoreBtn a button{
+    color: #3cc0e0;
+    background: none;
+    border: 1px solid #48ff00;
+    font-size: .7rem;
+    padding: .1rem .2rem;
+    transition: all .3s;
+    cursor: pointer;
+ }
+ 
+ .showMoreBtn a button:hover{
+     color: #000000;
+     background: #3cc0e0;
+  }
+
+@media (max-width:992px) {
+    .sProdSec{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .spDetail,
+    .spGallary{
+        flex: 1;
+    }
+    .spDetail{
+        padding: 1rem 3rem;
+    }
+    .smbProds{
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width:780px) {
+    .smbProds{
+        grid-template-columns: auto auto;
+        gap: .3rem;
+    }
+    .showMoreBtn a button{
+        transform: scale(.9);
+     }
+}
+
+@media (max-width:650px) {
+    .sProdSec{
+        pad: .5rem;
+    }
+    .spDetail{
+        padding: 0;
+    }
+    .smbProds{
+        grid-template-columns: auto;
+        gap: .3rem;
+    }
+    .showMoreBtn a button{
+        transform: scale(.9);
+     }
+}

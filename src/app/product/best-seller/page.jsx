@@ -1,4 +1,4 @@
-import BSProduct from "@/components/BestSellProd/BSProduct";
+import BSProduct from "@/components/product/BestSellProd/BSProduct";
 
 const BestSeller = () => {
     return (

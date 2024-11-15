@@ -62,7 +62,7 @@
   .button {
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #ff9900;
+    background-color: #00aeff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -70,7 +70,7 @@
   }
   
   .button:hover {
-    background-color: #e68a00;
+    background-color: #00a5e6;
   }
   
 

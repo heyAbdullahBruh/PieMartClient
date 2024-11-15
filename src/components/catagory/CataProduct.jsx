@@ -2,7 +2,8 @@
 import styles from './cata.module.css';
 import { api } from "@/config/api";
 import { useEffect, useState } from "react";
-import ProductTemp from "../ProductTemp/ProductTemp";
+import ProductTemp from '../product/ProductTemp/ProductTemp';
+
 // import Link from "next/link";
 
 const CataProduct = ({catagory,endP}) => {

@@ -5,10 +5,12 @@ import img from '@/gallary/logo.png';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faGear, faUserAlt } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import {useState } from 'react';
+import {useCart } from '../cart/cartContext';
 const Navbar = () => {
 
     const [vissible,setVissible]=useState(true);
+    const {cartCount}=useCart();
 
     return (
         <>
@@ -69,7 +71,12 @@ const Navbar = () => {
 
                     <div className="siteItem">
                         <ul className='dropdown2'>
-                            <li><FontAwesomeIcon icon={faCartShopping}/></li>
+                            <li>
+                                <Link href={'/cart'} className='cartLink'>
+                                    <FontAwesomeIcon icon={faCartShopping}/>
+                                    <span>{cartCount}</span>
+                                </Link>
+                            </li>
                             <li>
                             <Link href="/#" className="dropdown2-link" style={{color:'white'}}>
                                 <FontAwesomeIcon icon={faGear}/>

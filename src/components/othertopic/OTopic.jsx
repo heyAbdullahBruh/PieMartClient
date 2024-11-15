@@ -73,7 +73,7 @@ const OTopic = () => {
                         </ul>
                     </div>
                     <div className="servLink">
-                        <Link href={'/shop'}><button><FontAwesomeIcon icon={faShoppingCart}/> Start Shopping</button></Link>
+                        <Link href={'/product/shop'}><button><FontAwesomeIcon icon={faShoppingCart}/> Start Shopping</button></Link>
                     </div>
                 </div>
             </div>

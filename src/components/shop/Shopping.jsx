@@ -47,9 +47,11 @@ const Shopping = ({endP}) => {
         .then((res)=>{
             if(res.success===true){
                 setProducts(res.products);
+                setError('');
                 setLoadding(false);
             }else{
                 setError(res.message);
+                setProducts([]);
                 setLoadding(false);
             }
         }).catch((err)=>setError(err.message));
@@ -148,7 +150,9 @@ const Shopping = ({endP}) => {
                             <ProductTemp key={p._id} product={p} />
                         ))}
                     </div>
-                    <h1 style={{color:'red',textAlign:'center'}}>{error}</h1>
+                    {
+                        error&&<h1 style={{color:'red',textAlign:'center'}}>{error}</h1>
+                    }
                 </>
             }
        </div>

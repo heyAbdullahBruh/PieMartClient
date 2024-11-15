@@ -2,7 +2,8 @@
 const Cart = () => {
     return (
         <div>
-            cart
+            <h1>asdfiu</h1>
+            {/* <CartP/> */}
         </div>
     );
 };

@@ -1,4 +1,4 @@
-import NProduct from '@/components/newProducts/NProduct';
+import NProduct from '@/components/product/newProducts/NProduct';
 import React from 'react';
 
 const NewProduct = () => {

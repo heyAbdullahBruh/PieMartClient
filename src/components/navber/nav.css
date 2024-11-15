@@ -205,6 +205,28 @@ label .hamburger4-lines span:nth-child(2) {
     box-shadow: 0px 3px 5px -1px #ccc;
   }
 
+
+.cartLink{
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+.cartLink svg{
+  font-size: 1.3rem;
+}
+.cartLink span{
+  position: absolute;
+  color: rgb(126, 250, 174);
+  font-size: .9rem;
+  top: -.7rem;
+  right: -.2rem;
+  background-color: #d85600;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
   
 @media screen and (max-width:780px) {
  .navber{

@@ -1,19 +1,19 @@
 'use client';
-import styles from './bsProds.module.css';
+import styles from './nprods.module.css';
 import { api } from "@/config/api";
 import { useEffect, useState } from "react";
-import ProductTemp from "../ProductTemp/ProductTemp";
+import ProductTemp from '@/components/product/ProductTemp/ProductTemp';
 import Link from 'next/link';
 
 
-const BSProduct = ({endP,showP}) => {
+const NProduct = ({endP,showP}) => {
 
     const [product,setProduct]=useState([]);
 
     const [errorM,setErrorM]=useState('');
 
     useEffect(()=>{
-        fetch(`${api}/products`,{cache:'no-store'})
+        fetch(`${api}/products`)
         .then(res=>res.json())
         .then((res)=>{
             if (res.success) {
@@ -23,30 +23,30 @@ const BSProduct = ({endP,showP}) => {
             };
         })
 
-    },[]);
+    },[])
     console.log(errorM);
-    // console.log(product);
+    console.log(product);
     return (
-        <section className={styles.bSProductSec}>
+        <section className={styles.NProductSec}>
 
-            <div className={styles.bsHeader}>
-                <h1>Best Selling Products</h1>
+            <div className={styles.NHeader}>
+                <h1>New Lunches Products</h1>
             </div>
 
-            <div className={styles.bsProds}>
+            <div className={styles.NProds}>
                 {product?.slice(0,endP).map(p => (
                     <ProductTemp key={p._id} product={p} />
                 ))}
             </div>
+
             {
              showP&&
              <div className={styles.showMoreBtn}>
-                 <Link href={'/product/best-seller'}><button>Show More Products</button></Link>
+                 <Link href={'/product/new-product'}><button>Show More Products</button></Link>
              </div>
             }
-            
         </section>
     );
 };
 
-export default BSProduct;
+export default NProduct;
