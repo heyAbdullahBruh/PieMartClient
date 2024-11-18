@@ -25,12 +25,12 @@ const BrandProduct = ({endP,brand}) => {
 
     },[brand])
     console.log(errorM);
-    console.log(product);
+    // console.log(product);
     return (
         <section className={styles.bProductSec}>
 
             <div className={styles.bpHeader}>
-                <h1>New Lunches Products</h1>
+                <h1>{brand.toLocaleUpperCase()} Brand Products</h1>
             </div>
 
             <div className={styles.bProds}>

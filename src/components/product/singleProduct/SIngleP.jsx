@@ -5,12 +5,18 @@ import ImageSlider from './imageSlider/ImageSlide';
 import styles from './sprod.module.css';
 import Link from 'next/link';
 import ProductTemp from '@/components/product/ProductTemp/ProductTemp';
+import AddToCart from '@/components/cart/addtoCart/AddToCart';
+import { useCart } from '@/components/cart/cartContext';
+import { useRouter } from 'next/navigation';
 
 const SIngleP = ({productId}) => {
+    const router =useRouter();
 
     const [product,setProduct]=useState({});
     const [loading,setLoading]=useState(true);
     const [error,setError]=useState('');
+
+    const {cart,token}=useCart();
 
     useEffect(()=>{
         fetch(`${api}/product/${productId}`)
@@ -22,7 +28,7 @@ const SIngleP = ({productId}) => {
                 setError('');
             } else {
                 setLoading(false);
-                setError(req.message);
+                setError(res.message);
             };
         }).catch(err=>setError(err.message));
     },[productId]);
@@ -31,18 +37,19 @@ const SIngleP = ({productId}) => {
 
     const [brandP,setBrandP]=useState([]);
         useEffect(()=>{
-            fetch(`${api}/product/brand/${brand}`)
-            .then(res=>res.json())
-            .then((res)=>{
-                if (res.success==true) {
-                    setBrandP(res.products);
-                    setLoading(false);
-                    setError('');
-                } else {
-                    setLoading(false);
-                    setError(req.message);
-                };
-            }).catch(err=>setError(err.message));
+            if (brand) {
+                fetch(`${api}/product/brand/${brand}`)
+                .then(res=>res.json())
+                .then((res)=>{
+                    if (res.success==true) {
+                        setBrandP(res.products);
+                        setLoading(false);
+                        setError('');
+                    } else {
+                        setLoading(false);
+                    };
+                }).catch(err=>setError(err.message));
+            }
         },[brand]);
 
     return (
@@ -66,7 +73,10 @@ const SIngleP = ({productId}) => {
                                 <h4>Price : ${price} </h4>
                             </div>
                         </div>
-                        <button className={styles.atcBtn}>Add To Cart</button>
+                        {
+                            cart.find((c)=>c.product===productId)?<button className={styles.gtcBtn} onClick={()=>router.replace('/cart')} >Go To Cart</button>
+                            :<AddToCart token={token} productId={product._id}/>
+                        }
                     </section><hr />
                     <section className={styles.smbProd}>
 

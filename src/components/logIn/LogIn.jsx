@@ -3,10 +3,15 @@ import style from './login.module.css';
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { api } from '@/config/api';
+import Popup from '../popup/popup';
 
 const LogIn = ({token}) => {
     const router=useRouter();
-
+    const [popupMsg,setPopupmsg]=useState({
+        type:true,
+        message:'',
+        trigger:false,
+     });
     if (token) {
         return router.push('/product/shop');
     } else {
@@ -44,15 +49,17 @@ const LogIn = ({token}) => {
                         if (res.success === true) {
                             setCookie('token',res.token,10);
                             router.replace('/product/shop');
+                            setPopupmsg({message:res.message,trigger:true,type:true});
                         } else {
-                            alert(res.message);
-                            location.reload();
+                            setPopupmsg({message:res.message,trigger:true,type:false});
+                            // location.reload();
                         }
                     })
                     .catch((error) => {
                         console.error("Fetch error:", error);
-                        alert("An error occurred. Check console for details.");
+                        setPopupmsg({message:error.message,trigger:true,type:false});
                     });
+                    setTimeout(() => setPopupmsg({trigger:false}), 3000);
             };
 
 
@@ -60,7 +67,7 @@ const LogIn = ({token}) => {
             return (
                 <section>
                 
-                <div className={style.logIn}>
+                    <div className={style.logIn}>
                         <h1 style={{fontSize:'2.5rem',margin:'2rem'}}>LogIn</h1>
                         <form onSubmit={handleSubmit}>
                             <input placeholder='Write your Eamil' value={mail} type="email" onChange={handleChange} required name="mail" />
@@ -68,6 +75,7 @@ const LogIn = ({token}) => {
                             <button type='submit'>LogIn</button>
                         </form>
                     </div> 
+                    <Popup trigger={popupMsg.trigger} message={popupMsg.message} type={popupMsg.type}/>
                 </section>
             );
 

@@ -1,0 +1,27 @@
+.popup {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    font-size: 16px;
+    height: 3rem;
+  }
+  
+  .popup span {
+    margin-right: 10px;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  

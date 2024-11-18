@@ -1,9 +1,10 @@
+import CartItem from "@/components/cart/CartItem/cartItem";
 
 const Cart = () => {
     return (
         <div>
-            <h1>asdfiu</h1>
-            {/* <CartP/> */}
+            <h1>Cart Page :</h1>
+            <CartItem/>
         </div>
     );
 };

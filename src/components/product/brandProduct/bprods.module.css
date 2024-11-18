@@ -9,10 +9,10 @@
     margin: 2rem 0;
 }
 
-.bPHeader{
+.bpHeader{
     margin: 2rem 0;
 }
-.bPHeader h1{
+.bpHeader h1{
     font-family: "Roboto Mono", monospace;
     border-bottom: 3px dotted #3cc0e0;
     border-top: 3px dotted #dde03c;

@@ -10,7 +10,7 @@ import {useCart } from '../cart/cartContext';
 const Navbar = () => {
 
     const [vissible,setVissible]=useState(true);
-    const {cartCount,token}=useCart();
+    const {cart,token}=useCart();
     const deleteCookie = (name) => {
         document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
       };
@@ -83,7 +83,7 @@ const Navbar = () => {
                             <li>
                                 <Link href={'/cart'} className='cartLink'>
                                     <FontAwesomeIcon icon={faCartShopping}/>
-                                    <span>{cartCount}</span>
+                                    <span>{cart.length}</span>
                                 </Link>
                             </li>
                             <li>

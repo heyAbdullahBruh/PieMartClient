@@ -21,17 +21,17 @@
 .spGallary{
     flex: 2;
 }
-.atcBtn{
+.gtcBtn{
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    background-color: #ff9900;
-    color: white;
+    background-color: #00ffb3cc;
+    color: rgb(1, 11, 34);
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
-.atcBtn:hover{
-    background-color: #df8703;
+.gtcBtn:hover{
+    background-color: #03dfcdad;
 }
 .smbProd{
     display: flex;

@@ -1,0 +1,14 @@
+
+
+.actBtn{
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #ff9900;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.actBtn:hover{
+    background-color: #df8703;
+}

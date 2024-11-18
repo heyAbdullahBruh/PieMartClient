@@ -5,10 +5,10 @@ import { createContext, useContext, useState } from 'react';
  const CartContext = createContext();
 
  const CartProvider = ({ children,token }) => {
-  const [cartCount, setCartCount] = useState(0);
-
+  // const [cartCount, setCartCount] = useState(0);
+  const [cart ,setCart]=useState([]);
   return (
-    <CartContext.Provider value={{ cartCount, setCartCount ,token}}>
+    <CartContext.Provider value={{ cart ,setCart ,token}}>
       {children}
     </CartContext.Provider>
   );
