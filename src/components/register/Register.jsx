@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { api } from '@/config/api';
 import PopUp from '../popup/popup';
+import Link from 'next/link';
 
 const Register = () => {
 const router=useRouter();
@@ -60,6 +61,7 @@ const router=useRouter();
 
                   <input placeholder='Write your Password' value={password} type="password" onChange={handleChange} required name="password" />
                   <button type='submit'>SIGN UP</button>
+                  <p>Already have an account.? Please Sign in / <Link href={'/auth/login'}>Sign In</Link> </p>
               </form>
               <PopUp message={popupMsg.message} trigger={popupMsg.trigger} type={popupMsg.type}/>
           </div> 

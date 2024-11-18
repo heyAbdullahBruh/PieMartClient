@@ -91,18 +91,27 @@ const Navbar = () => {
                                 <FontAwesomeIcon icon={faGear}/>
                             </Link>
                                 <ul className="dropdown2-links">
-                                <li>
-                                    <Link href="/#"><FontAwesomeIcon icon={faUserAlt}/></Link>
-                                </li>
-                                <li>
-                                    <Link href="/#">Become A Seller</Link>
-                                </li>
-                                <li>
-                                    <Link href="/#">Create Product</Link>
-                                </li>
-                                <li>
-                                    <Link href="/#">Setting</Link>
-                                </li>
+                                
+                                {
+                                    token?<>
+                                        <li>
+                                            <Link href="/#"><FontAwesomeIcon icon={faUserAlt}/></Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/#">Become A Seller</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/#">Create Product</Link>
+                                        </li>
+                                        <li>
+                                            <Link href="/#">Setting</Link>
+                                        </li>
+                                    </>: <li>
+                                            <Link href={'/auth/login'}> 
+                                                <button style={{cursor:'pointer'}}>LogIn</button>
+                                            </Link>  
+                                        </li>
+                                }
                                 <li>
                                     <Link href="/#">Terms</Link>
                                 </li>

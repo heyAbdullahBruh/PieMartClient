@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { api } from '@/config/api';
 import Popup from '../popup/popup';
+import Link from 'next/link';
 
 const LogIn = ({token}) => {
     const router=useRouter();
@@ -74,6 +75,7 @@ const LogIn = ({token}) => {
                             <input placeholder='Write your Password' value={password} type="password" onChange={handleChange} required name="password" />
                             <button type='submit'>LogIn</button>
                         </form>
+                        <p>Havn't any account.? Please sign up / <Link href={'/auth/register'}>Registration</Link> </p>
                     </div> 
                     <Popup trigger={popupMsg.trigger} message={popupMsg.message} type={popupMsg.type}/>
                 </section>

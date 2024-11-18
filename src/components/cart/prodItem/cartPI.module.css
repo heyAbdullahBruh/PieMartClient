@@ -1,3 +1,23 @@
+
+
+.cartSec{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.cartPsec{
+  width: 60%;
+  padding: 1rem;
+  border-right: 1px solid #eee;
+}
+.cartPprcSec{
+  width: 40%;
+
+}
+
+
 .cartItem {
     display: flex;
     align-items: center;
@@ -61,3 +81,59 @@
     color: #333;
   }
   
+  .cutBtn button{
+    padding: .2rem .68rem;
+    font-size: 1.5rem;
+    background: black;
+    border: none;
+    cursor: pointer;
+    color: rgb(236, 226, 226);
+    border-radius: 50%;
+  }
+  .cutBtn button:focus{
+    background: red;
+  }
+
+.cartPprcSec{
+  background-color: #c491681a;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cartPprcSec table{
+  border-collapse: collapse;
+  border: 1px solid #eeeeee;
+}
+
+.cartPprcSec table th,
+.cartPprcSec table td
+{
+  /* border-collapse: collapse; */
+  /* width: 10rem; */
+  padding: 2rem 4rem;
+  text-align: justify;
+  border: 1px solid #eee;
+  transform: scale(1.1);
+}
+
+@media (max-width:992px) {
+  .cartSec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .cartPsec,
+  .cartPprcSec{
+    width: 100%;
+    border: none;
+  }
+
+
+
+
+}

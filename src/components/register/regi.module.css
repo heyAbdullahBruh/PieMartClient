@@ -54,6 +54,19 @@
     color: darkturquoise;
 }
 
+.register p {
+    background-color: #aaaaaa1c;
+    font-size: .8rem;
+}
+
+.register p a {
+    color: rgb(0, 110, 255);
+    text-decoration: none;
+}
+.register p a:hover {
+    border-bottom: 1px solid #fffb03;
+}
+
 @media screen and (max-width:450px) {
     .register form input{
         width: 20rem;

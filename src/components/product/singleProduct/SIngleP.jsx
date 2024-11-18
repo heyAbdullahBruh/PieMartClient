@@ -74,8 +74,13 @@ const SIngleP = ({productId}) => {
                             </div>
                         </div>
                         {
-                            cart.find((c)=>c.product===productId)?<button className={styles.gtcBtn} onClick={()=>router.replace('/cart')} >Go To Cart</button>
-                            :<AddToCart token={token} productId={product._id}/>
+                            token?
+                            <>
+                                {
+                                    cart.find((c)=>c.product===productId)?<button className={styles.gtcBtn} onClick={()=>router.replace('/cart')} >Go To Cart</button>
+                                    :<AddToCart token={token} productId={product._id}/>
+                                }
+                            </>:<p style={{color:'yellow'}}>Plesae first login . Then products add in your cart.</p>
                         }
                     </section><hr />
                     <section className={styles.smbProd}>

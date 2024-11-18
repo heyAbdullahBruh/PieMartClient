@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 1rem;
     margin: 5rem 0;
 }
 
@@ -52,6 +53,19 @@
 }.logIn form button:hover{
     background:none;
     color: darkturquoise;
+}
+
+.logIn p {
+    background-color: #aaaaaa1c;
+    font-size: .8rem;
+}
+
+.logIn p a {
+    color: rgb(0, 110, 255);
+    text-decoration: none;
+}
+.logIn p a:hover {
+    border-bottom: 1px solid #fffb03;
 }
 
 @media screen and (max-width:450px) {
