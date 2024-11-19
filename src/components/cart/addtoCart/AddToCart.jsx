@@ -1,12 +1,10 @@
 import { api } from '@/config/api';
 import styles from './atc.module.css';
 import Popup from '@/components/popup/popup';
-import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
 
 const AddToCart = ({token,productId}) => {
-    const router =useRouter();
     const [popupMsg,setPopupmsg]=useState({
         type:true,
         message:'',
@@ -25,7 +23,7 @@ const AddToCart = ({token,productId}) => {
         }).then(res=>res.json())
         .then((res) => {
            if (res.success === true) {
-               router.replace('/cart');
+               location.href='/cart';
                setPopupmsg({message:res.message,trigger:true,type:true});
            } else {
                setPopupmsg({message:res.message,trigger:true,type:false});

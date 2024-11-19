@@ -100,6 +100,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 1rem;
 }
 
 .cartPprcSec table{
@@ -116,6 +117,21 @@
   text-align: justify;
   border: 1px solid #eee;
   transform: scale(1.1);
+}
+.cartPprcSec button{
+  background-color: darkturquoise;
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: all .5s ease-in-out;
+}.cartPprcSec button:hover{
+  background:none ;
+  color: darkturquoise;
+  border: 1px solid yellowgreen;
+}.cartPprcSec button:focus{
+  background:none ;
+  color: darkturquoise;
+  border: 3px solid yellow;
 }
 
 @media (max-width:992px) {

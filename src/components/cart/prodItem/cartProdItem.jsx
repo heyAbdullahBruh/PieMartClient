@@ -3,8 +3,11 @@ import styles from "./cartPI.module.css";
 import { api } from "@/config/api";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { useOrder } from "@/components/order/orderContext";
+import { useRouter } from "next/navigation";
 
 const CartPItem = ({ cartProd, token, getCartPId }) => {
+  const router =useRouter();
   const updateQuantity = async (productId, quantity) => {
     try {
       await fetch(`${api}/cart/quantity/${productId}`, {
@@ -17,6 +20,37 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
     }
   };
 
+  const {orderProduct,setOrderProduct}=useOrder();
+
+  const handleOrderCheak=(productId)=>{
+    setIsOrder((prevResult) => {
+      const updateOrderResult = {
+        ...prevResult,
+        [productId]: !prevResult[productId],
+      };
+      return updateOrderResult;
+    });
+  };
+
+  const [isOrder, setIsOrder] = useState(() => {
+    const order = localStorage.getItem("isOrder");
+    if (order) {
+      return JSON.parse(order);
+    }
+    return {};
+  });
+
+ // Initialize Order from cartProd if necessary
+ useEffect(() => {
+  if (cartProd?.length > 0) {
+    const initialOrder = cartProd.reduce((acc, item) => {
+      acc[item.productId] = true;
+      return acc;
+    }, {});
+    setIsOrder(initialOrder);
+  }
+}, [cartProd]);
+
   const [quantities, setQuantities] = useState(() => {
     const savedQuantities = localStorage.getItem("cartQuantities");
     if (savedQuantities) {
@@ -24,6 +58,7 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
     }
     return {};
   });
+
 
   // Initialize quantities from cartProd if necessary
   useEffect(() => {
@@ -36,10 +71,12 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
     }
   }, [cartProd]);
 
+
   // Sync quantities to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("cartQuantities", JSON.stringify(quantities));
-  }, [quantities]);
+    localStorage.setItem("isOrder", JSON.stringify(isOrder));
+  }, [quantities,isOrder]);
 
   const increaseQuantity = (productId) => {
     setQuantities((prevQuantities) => {
@@ -63,27 +100,27 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
     });
   };
 
-  // const [allPrice,setAllPrice]=useState([]);
-  // const [priceSubTotal,setPriceSubTotal] =useState(0) ;
-  // useEffect(()=>{
-     
-  //    setAllPrice(cartProd.map((p)=>p.price * p.quantity));
-  //    setPriceSubTotal(allPrice?.reduce((newPrice,currentPrice)=> newPrice+currentPrice,0))
-     
-  // },[cartProd,quantities]);
-  // console.log("prices:", priceSubTotal);
-  // let vat = 0
   const calcSubTotalPrc = () => {
     return cartProd.reduce((total, item) => {
-      const quantity = quantities[item.productId] ?? item.quantity; // Get quantity from state or fallback to initial quantity
+      const quantity =isOrder[item.productId]? quantities[item.productId] : 0; // Get quantity from state or fallback to initial quantity
       return total + item.price * quantity;
     }, 0);
   };
   
-  const vat = calcSubTotalPrc()/10;
+  const vat = calcSubTotalPrc()/40;
 
   const totalPrice = calcSubTotalPrc() +vat;
-// console.log(totalPrice);
+
+  useEffect(()=>{
+    const filterOrderProduct = cartProd?.filter((product)=>{
+      if (isOrder[product.productId]===true) {
+        return product;
+      }
+    });
+    setOrderProduct(filterOrderProduct);
+  },[isOrder])
+
+  
   return (
     <>
 
@@ -92,6 +129,7 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
           <section className={styles.cartPsec}>
           {cartProd.map((c) => (
             <div className={styles.cartItem} key={c.productId}>
+              <input style={{transform:'scale(1.7)',cursor:'pointer'}} type="checkbox" defaultChecked={isOrder[c.productId]===true?true:false} onChange={()=>handleOrderCheak(c.productId)}/>
               <img src={c.imageUrl[0].photo} alt={c.name} className={styles.image} />
               <div className={styles.details}>
                 <h3 className={styles.name}>{c.name}</h3>
@@ -143,6 +181,9 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
                  </tr>
               </tbody>
             </table>
+            {
+              orderProduct.length>0 ? <button onClick={()=>router.replace('/order')}>Procced to Order</button>: ''
+            }
           </section>
 
         </section>

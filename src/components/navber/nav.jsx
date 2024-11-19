@@ -7,10 +7,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping, faGear, faUserAlt } from '@fortawesome/free-solid-svg-icons';
 import {useState } from 'react';
 import {useCart } from '../cart/cartContext';
+import { useOrder } from '../order/orderContext';
 const Navbar = () => {
 
     const [vissible,setVissible]=useState(true);
     const {cart,token}=useCart();
+    const {user}=useOrder()
     const deleteCookie = (name) => {
         document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
       };
@@ -95,14 +97,18 @@ const Navbar = () => {
                                 {
                                     token?<>
                                         <li>
-                                            <Link href="/#"><FontAwesomeIcon icon={faUserAlt}/></Link>
+                                            <Link href="/user"><FontAwesomeIcon icon={faUserAlt}/></Link>
                                         </li>
+                                       {
+                                        user.isAdmin? 
                                         <li>
-                                            <Link href="/#">Become A Seller</Link>
-                                        </li>
+                                            <Link href="#">Create Product</Link>
+                                        </li> :
                                         <li>
-                                            <Link href="/#">Create Product</Link>
+                                            <Link href="/user/become-a-sellar">Become A Seller</Link>
                                         </li>
+                                       }
+                                        
                                         <li>
                                             <Link href="/#">Setting</Link>
                                         </li>

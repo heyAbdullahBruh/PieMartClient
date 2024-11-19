@@ -112,7 +112,7 @@ const CartItem = () => {
         // const removeProduct=cartProd.filter((p)=>p.productId===cartPid);
         // console.log(removeProduct);
     },[cartPid]);
-console.log(cartProd);
+// console.log(cartProd);
     return (
         <>
             {
