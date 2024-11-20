@@ -7,6 +7,20 @@
     margin: 2rem 0;
 }
 
+.sProd .prodAction{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.prodAction button{
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+
+
 .sProdSec{
     display: flex;
     flex-direction: row;

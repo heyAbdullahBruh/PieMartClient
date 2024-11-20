@@ -8,6 +8,10 @@ import ProductTemp from '@/components/product/ProductTemp/ProductTemp';
 import AddToCart from '@/components/cart/addtoCart/AddToCart';
 import { useCart } from '@/components/cart/cartContext';
 import { useRouter } from 'next/navigation';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPencil } from '@fortawesome/free-solid-svg-icons';
+import { useOrder } from '@/components/order/orderContext';
+import DeleteProduct from '../deleteProduct/DeleteProduct';
 
 const SIngleP = ({productId}) => {
     const router =useRouter();
@@ -17,6 +21,7 @@ const SIngleP = ({productId}) => {
     const [error,setError]=useState('');
 
     const {cart,token}=useCart();
+    const {user}=useOrder();
 
     useEffect(()=>{
         fetch(`${api}/product/${productId}`)
@@ -33,7 +38,7 @@ const SIngleP = ({productId}) => {
         }).catch(err=>setError(err.message));
     },[productId]);
 
-    const {pName,pDesc,brand,catagory,price,averageRat,pImgs}= product;
+    const {pName,pDesc,brand,catagory,price,averageRat,pImgs,_id,adminId}= product;
 
     const [brandP,setBrandP]=useState([]);
         useEffect(()=>{
@@ -58,7 +63,15 @@ const SIngleP = ({productId}) => {
                 loading ? <p>Loading...</p>: error ? <h3 style={{color:'red'}}>{error}</h3>:
                  <>
                     <section className={styles.sProd}>
-                
+
+                        {
+                            user._id===adminId && 
+                            <div className={styles.prodAction}>
+                                <Link href={`/product/update/${_id}`}><button> <FontAwesomeIcon icon={faPencil}/> Edit </button></Link>
+                                <DeleteProduct id={_id} token={token}/>
+                            </div>
+                        }
+
                         <div className={styles.sProdSec}>
                             <div className={styles.spGallary}>
                                 <ImageSlider images={pImgs?pImgs:[]}/>

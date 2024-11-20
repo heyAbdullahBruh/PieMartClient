@@ -101,7 +101,7 @@ const Navbar = () => {
                                        {
                                         user.isAdmin? 
                                         <li>
-                                            <Link href="#">Create Product</Link>
+                                            <Link href="/product/add-product">Create Product</Link>
                                         </li> :
                                         <li>
                                             <Link href="/become-a-sellar">Become A Seller</Link>

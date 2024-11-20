@@ -29,17 +29,6 @@
     font-family: "Roboto Mono", monospace;
 }
 
-.logIn form textarea{
-    width: 25rem;
-    height: 14rem;
-    background:none;
-    border: 1px solid aqua;
-    font-size: 1rem;
-    color: darkturquoise;
-    padding: .5rem 1rem;
-    font-family: "Roboto Mono", monospace;
-    resize: none;
-}
 
 .logIn form button{
     width: 25rem;

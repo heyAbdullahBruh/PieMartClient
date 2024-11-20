@@ -1,0 +1,173 @@
+.createProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}   
+
+.createProduct h1{
+    border-bottom: 1px solid #0f960a;
+}
+
+.createProduct form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: .4rem;
+}
+
+.createProduct form input{
+    height: 4rem;
+    background:none;
+    border: 1px solid aqua;
+    font-size: 1rem;
+    color: darkturquoise;
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+    margin: .4rem;
+}.createProduct form .pName{
+    width: 40rem;
+    height: 5rem;
+    font-size: 1.5rem;
+}.createProduct form .prcStc input{
+    width: 19.5rem;
+}
+
+.createProduct form .brandCata{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}form .brand,
+form .cata{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start; */
+}.createProduct form .brandCata label {
+    margin-left: .5rem;
+}
+
+.createProduct form select{
+    width: 19.5rem;
+    height: 4rem;
+    background:none;
+    border: 1px solid aqua;
+    font-size: 1rem;
+    color: darkturquoise;
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+    margin: .4rem;
+    cursor: pointer;
+}.createProduct form select option{
+    background-color: black;
+}
+
+.createProduct form textarea{
+    width: 40rem;
+    height: 14rem;
+    background:none;
+    border: 1px solid aqua;
+    font-size: 1rem;
+    color: darkturquoise;
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+    resize: vertical;
+}
+
+.createProduct form button{
+    width: 20rem;
+    background:darkturquoise;
+    border: 1px solid aqua;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+}.createProduct form button:hover{
+    background:none;
+    color: darkturquoise;
+}
+
+.pNamesec p{
+    font-size: .7rem;
+    margin: .2rem;
+    margin-top: -1rem;
+}
+.pDesc{
+    text-align: center;
+}
+.pDesc  p{
+    font-size: .7rem;
+    margin: .2rem;
+    margin-top: -1rem;
+    text-align: left;
+}
+
+.imgInp p{
+    font-size: .7rem;
+    margin: .2rem;
+    margin-top: -1rem;
+}
+.imgInp input{
+   width: 40rem;
+}
+
+
+@media (max-width:700px) {
+    
+.createProduct form input{
+    height: 3rem;
+}.createProduct form .pName{
+    width: 25rem;
+    height: 4rem;
+    font-size: 1rem;
+}.createProduct form .prcStc input{
+    width: 12.5rem;
+}
+
+.createProduct form .brandCata{
+    flex-direction: column;
+}
+
+.createProduct form select{
+    width: 25rem;
+    height: 3rem;
+}
+
+.createProduct form textarea{
+    width: 25rem;
+    height: 10rem;
+}
+
+.createProduct form button{
+    width: 15rem;
+}
+
+
+.imgInp input{
+   width: 25rem;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
