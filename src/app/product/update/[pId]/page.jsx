@@ -1,5 +1,5 @@
+import UpdateP from '@/components/product/updateP/UpdateP';
 import { api } from '@/config/api';
-import React from 'react';
 
 const page =async ({params}) => {
     const {pId}=await params;
@@ -7,9 +7,9 @@ const page =async ({params}) => {
     const data = await res.json();
     // console.log(data.product);
     return (
-        <div>
-            <h1>{pId}</h1>
-        </div>
+        <>
+        <UpdateP product={data.product} id={pId}/>
+        </>
     );
 };
 

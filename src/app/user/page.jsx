@@ -1,3 +1,4 @@
+import AdminPanel from "@/components/Admin/AdminPanel";
 import Profile from "@/components/user/profile/profile";
 import { api } from "@/config/api";
 import { cookies } from "next/headers";
@@ -12,7 +13,10 @@ const user =async () => {
 
     return (
         <>
-            <Profile user={data?.user} token={token}/>
+            {
+                data?.user?.isAdmin===true? <AdminPanel/>
+                : <Profile user={data?.user} token={token}/>
+            }
         </>
     );
 };

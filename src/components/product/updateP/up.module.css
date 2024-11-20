@@ -1,0 +1,158 @@
+.UpdateP{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}   
+
+.UpdateP h1{
+    border-bottom: 1px solid #0f960a;
+}
+
+.UpdateP form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    gap: .4rem;
+}
+
+.UpdateP form input{
+    height: 4rem;
+    background:none;
+    border: 1px solid aqua;
+    font-size: 1rem;
+    color: darkturquoise;
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+    margin: .4rem;
+}.UpdateP form .pName{
+    width: 40rem;
+    height: 5rem;
+    font-size: 1.5rem;
+}.UpdateP form .prcStc input{
+    width: 19.5rem;
+}
+
+.UpdateP form .brandCata{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}form .brand,
+form .cata{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: flex-start; */
+}.UpdateP form .brandCata label {
+    margin-left: .5rem;
+}
+
+.UpdateP form select{
+    width: 19.5rem;
+    height: 4rem;
+    background:none;
+    border: 1px solid aqua;
+    font-size: 1rem;
+    color: darkturquoise;
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+    margin: .4rem;
+    cursor: pointer;
+}.UpdateP form select option{
+    background-color: black;
+}
+
+.UpdateP form textarea{
+    width: 40rem;
+    height: 14rem;
+    background:none;
+    border: 1px solid aqua;
+    font-size: 1rem;
+    color: darkturquoise;
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+    resize: vertical;
+}
+
+.UpdateP form button{
+    width: 20rem;
+    background:darkturquoise;
+    border: 1px solid aqua;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    padding: .5rem 1rem;
+    font-family: "Roboto Mono", monospace;
+}.UpdateP form button:hover{
+    background:none;
+    color: darkturquoise;
+}
+
+.pNamesec p{
+    font-size: .7rem;
+    margin: .2rem;
+    margin-top: -1rem;
+}
+.pDesc{
+    text-align: center;
+}
+.pDesc  p{
+    font-size: .7rem;
+    margin: .2rem;
+    margin-top: -1rem;
+    text-align: left;
+}
+
+.imgInp p{
+    font-size: .7rem;
+    margin: .2rem;
+    margin-top: -1rem;
+}
+.imgInp input{
+   width: 40rem;
+}
+
+
+@media (max-width:700px) {
+    
+.UpdateP form input{
+    height: 3rem;
+}.UpdateP form .pName{
+    width: 25rem;
+    height: 4rem;
+    font-size: 1rem;
+}.UpdateP form .prcStc input{
+    width: 12.5rem;
+}
+
+.UpdateP form .brandCata{
+    flex-direction: column;
+}
+
+.UpdateP form select{
+    width: 25rem;
+    height: 3rem;
+}
+
+.UpdateP form textarea{
+    width: 25rem;
+    height: 10rem;
+}
+
+.UpdateP form button{
+    width: 15rem;
+}
+
+
+.imgInp input{
+   width: 25rem;
+}
+
+}
+
+
