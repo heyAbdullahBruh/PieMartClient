@@ -19,7 +19,7 @@ const Navbar = () => {
     
       const handleDeleteCookie = () => {
         deleteCookie('token');
-        alert('Cookie deleted!');
+        alert('Log out successfully');
         location.reload();
       };
     // console.log(token);
@@ -52,8 +52,7 @@ const Navbar = () => {
                             <li><Link href={'/product/new-product'}>New Product</Link> </li>
                             <li><Link href={'/product/shop'}>Shop</Link> </li>
                             <li> 
-                            <Link href="/#" className="dropdown-link" style={{color:'white'}}>Catagory
-                                <span className="arrow-down"> </span>
+                            <Link href="/#" className="dropdown-link" style={{color:'white'}}>Catagory &nbsp; <span className="arrow-down"> </span>
                             </Link>
                             <ul className="dropdown-links">
                                 <li>
@@ -105,7 +104,7 @@ const Navbar = () => {
                                             <Link href="#">Create Product</Link>
                                         </li> :
                                         <li>
-                                            <Link href="/user/become-a-sellar">Become A Seller</Link>
+                                            <Link href="/become-a-sellar">Become A Seller</Link>
                                         </li>
                                        }
                                         
