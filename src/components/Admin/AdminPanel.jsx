@@ -9,15 +9,15 @@ import Orders from './adminPorder/apOrder';
 import MyOrders from './myOrder/myorder';
 import Profile from './profile/profile';
 
-const AdminPanel = () => {
+const AdminPanel = ({user}) => {
   const [activeSection, setActiveSection] = useState('dashboard');
 
   const renderSection = () => {
     switch (activeSection) {
       case 'dashboard':
-        return <Dashboard />;
+        return <Dashboard id={user._id}/>;
       case 'products':
-        return <Products />;
+        return <Products id={user._id}/>;
       case 'orders':
         return <Orders />;
       case 'my-orders':

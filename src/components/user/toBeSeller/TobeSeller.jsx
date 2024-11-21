@@ -10,6 +10,13 @@ import { useRouter } from 'next/navigation';
 
 const TobeSeller = () => {
     const router =useRouter();
+
+    const setCookie = (name, value, days) => {
+        const expires = new Date();
+        expires.setDate(expires.getDate() + days);
+        document.cookie = `${name}=${value}; expires=${expires.toUTCString()}; path=/`;
+    };
+
     const [popupMsg,setPopupmsg]=useState({
         type:true,
         message:'',
@@ -38,7 +45,9 @@ const TobeSeller = () => {
                 .then((res)=>res.json())
                 .then((res) => {
                     if (res.success === true) {
+                        setCookie('token',res.token,10);
                         setPopupmsg({message:res.message,trigger:true,type:true});
+                        location.reload();
                         router.replace('/');
                     } else {
                         setPopupmsg({message:res.message,trigger:true,type:false});

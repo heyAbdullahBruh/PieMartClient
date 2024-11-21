@@ -21,6 +21,7 @@ const OrderTask = () => {
 
     const [COD,setCOD]=useState(false);
     const [shippingAddress,setShippingAddress]=useState('');
+    const [customerPhone,setCustomerPhone]=useState('');
 
  const productQuantity = () => {
     return orderProduct.reduce((total, item) => {
@@ -46,9 +47,9 @@ const OrderTask = () => {
         },
         body:JSON.stringify({
             items:orderProduct,
+            customerPhone,
             shippingAddress,
             COD,
-            totalAmount:totalPrice
         })
     }).then(res=>res.json())
     .then((res)=>{
@@ -92,6 +93,8 @@ const OrderTask = () => {
 
           <div className={styles.userInp}>
             <textarea type="text" placeholder="Add your address where place your products" name="shippingAddress" onChange={(e)=>setShippingAddress(e.target.value)} />
+              <input type="number" className={styles.cName} placeholder="Add your phone active number " onChange={(e)=>setCustomerPhone(e.target.value)} />
+
             <div className={styles.deliveryType}>
                  <input type="checkbox" required defaultChecked={COD} style={{transform:'scale(1.7)',margin:'1rem',cursor:"pointer"}} onChange={()=> setCOD(!COD)} />  
                  <label htmlFor="COD">Cash On Delivery</label>

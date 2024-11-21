@@ -1,0 +1,47 @@
+.dbSec{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dbSec h1{
+    font-family: "Roboto mono" , monospace;
+    border-bottom: 1px solid aqua;
+    margin-bottom: 2rem;
+}
+
+
+.dashCard {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 1rem;
+}
+
+.dashCard .card {
+    width: 22rem;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    border-radius: 1.3rem;
+    box-shadow: 2px 1px 2px 1px rgba(255, 255, 255, 0.178);
+}
+
+@media (max-width:800px) {
+    .dashCard {
+        grid-template-columns: auto;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,6 +21,7 @@ const Navbar = () => {
         deleteCookie('token');
         alert('Log out successfully');
         location.reload();
+        location.href='/';
       };
     // console.log(token);
     return (

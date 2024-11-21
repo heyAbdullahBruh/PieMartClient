@@ -3,7 +3,6 @@
 import  { useEffect, useState } from 'react';
 import { useCart } from '../cartContext';
 import { api } from '@/config/api';
-// import styles from './cart.module.css';
 import CartPItem from '../prodItem/cartProdItem';
 import Popup from '@/components/popup/popup';
 
@@ -70,6 +69,17 @@ const CartItem = () => {
 
     },[]);
 
+    const cartProdUpdate =(cartI)=>{
+        // setCartProd((prevcart)=>{
+        //    const carrtUp= prevcart.find((p)=>p.productId===cartI.product).quantity=cartI.quantity;
+        //    return {
+        //     ...prevcart,
+        //     carrtUp
+        //    };
+        // });
+        setCartProd(cartI);
+        // console.log(cartI);
+    };
     // console.log(cartProd);
 
     const getCartPId=(id)=>{
@@ -119,7 +129,7 @@ const CartItem = () => {
             loading ? <p>Loading...</p>: error ? <h3 style={{color:'red'}}>{error}</h3>:
             <> 
             
-                <CartPItem cartProd={cartProd} token={token} getCartPId={getCartPId}/>
+                <CartPItem cartProd={cartProd} token={token} getCartPId={getCartPId} cartUpdate={cartProdUpdate}  />
                 <Popup trigger={popupMsg.trigger} message={popupMsg.message} type={popupMsg.type}/>
             </>
             } 

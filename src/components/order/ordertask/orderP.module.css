@@ -41,6 +41,19 @@
   font-weight: bold;
   font-family: "Roboto Mono", monospace;
 }
+
+.userInp .cName{
+  width: 60%;
+  height: 4rem;
+  border: 1px solid aqua;
+  background: none;
+  color: #eee;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+}
+
 .proccedDelivery button:nth-child(1){
   background-color: darkturquoise;
   color: black;
@@ -75,5 +88,15 @@
   border: 3px solid orange;
 }
 
-
+@media (max-width:700) {
+  .userInp textarea {
+    width: 100%;
+    height: 5rem;
+  }
+  
+  .userInp .cName{
+    width: 100%;
+    height: 3rem;
+  }
+}
 

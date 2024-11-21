@@ -13,8 +13,10 @@ const user =async () => {
 
     return (
         <>
+        {/* lorem200  */}
+
             {
-                data?.user?.isAdmin===true? <AdminPanel/>
+                data?.user?.isAdmin===true? <AdminPanel user={data?.user}/>
                 : <Profile user={data?.user} token={token}/>
             }
         </>

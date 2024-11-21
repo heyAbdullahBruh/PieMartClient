@@ -1,19 +1,50 @@
 .container {
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.container h1{
+  font-family: "Roboto mono", monospace;
+  border-bottom: 1px solid gray;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+ 
+  font-weight: bold;
+}
+
+.table tr:hover {
+  background: #f9f9f92d;
+}
+.table td button{
+  border-radius: 3rem;
+  background-color: red;
+  cursor: pointer;
+}.table td button:focus{
+  background-color: white;
+}
+
+  /* Responsive table */
+@media (max-width: 700px) {
+  .table th, .table td {
+    font-size: .6rem;
   }
-  
-  .orderList {
-    list-style: none;
-    padding: 0;
+  .table td a{
+    font-size: .6rem;
+    text-align: center;
   }
-  
-  .orderList li {
-    margin-bottom: 15px;
-    padding: 10px;
-    background: #f9f9f910;
-    border-radius: 5px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  
+}
+
+

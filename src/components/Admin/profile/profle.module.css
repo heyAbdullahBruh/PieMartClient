@@ -2,10 +2,34 @@
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
-  
-  .profileCard {
-    padding: 15px;
-    border-radius: 5px;
+  .container h1{
+    font-family: "Roboto mono" , monospace;
+    border-bottom: 1px solid greenyellow;
   }
-  
+
+  .userInfoSec{
+    width: 20rem;
+    background-color: rgba(17, 51, 34, 0.692);
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 1rem;
+}
+
+.userInfoSec img{
+    border-radius: 50%;
+    box-shadow: 1px 1px 6px 2px purple;
+}
+.container button{
+  width: 20rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}

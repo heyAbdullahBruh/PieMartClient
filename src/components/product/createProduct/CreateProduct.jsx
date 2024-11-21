@@ -123,6 +123,7 @@ const CreateProduct = () => {
                     <div className={styles.brand}>
                         <label htmlFor="brand">Brand name : -</label>
                         <select name="brand" onChange={handleBCP} required>
+                            <option>Brand</option>
                             <option value="apple">Apple</option>
                             <option value="oppo">Oppo</option>
                             <option value="lorial">Lorial</option>
@@ -136,6 +137,7 @@ const CreateProduct = () => {
                    <div className={styles.cata}>
                      <label htmlFor="catagroy">Catagory :-</label>
                      <select name="catagory" onChange={handleBCP} required >
+                        <option>Catagory</option>
                         <option value="mens">Mens</option>
                         <option value="women">Women</option>
                         <option value="kids">Kids</option>

@@ -49,7 +49,8 @@ const LogIn = ({token}) => {
                     .then((res) => {
                         if (res.success === true) {
                             setCookie('token',res.token,10);
-                            router.replace('/product/shop');
+                            location.reload();
+                            location.href='/';
                             setPopupmsg({message:res.message,trigger:true,type:true});
                         } else {
                             setPopupmsg({message:res.message,trigger:true,type:false});

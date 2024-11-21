@@ -6,7 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { useOrder } from "@/components/order/orderContext";
 import { useRouter } from "next/navigation";
 
-const CartPItem = ({ cartProd, token, getCartPId }) => {
+const CartPItem = ({ cartProd, token, getCartPId,cartUpdate }) => {
   const router =useRouter();
   const updateQuantity = async (productId, quantity) => {
     try {
@@ -14,6 +14,11 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
         method: "PATCH",
         headers: { "Content-Type": "application/json", authorization: token },
         body: JSON.stringify({ quantity }),
+      }).then(res=>res.json())
+      .then((res)=>{
+        if (res.success===true) {
+          cartUpdate(res.cart);
+        }
       });
     } catch (error) {
       console.error("Failed to update quantity:", error);
@@ -89,6 +94,7 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
     });
   };
 
+
   const decreaseQuantity = (productId) => {
     setQuantities((prevQuantities) => {
       const updatedQuantities = {
@@ -120,7 +126,7 @@ const CartPItem = ({ cartProd, token, getCartPId }) => {
     setOrderProduct(filterOrderProduct);
   },[isOrder])
 
-  
+  // console.log(cartProd);
   return (
     <>
 
